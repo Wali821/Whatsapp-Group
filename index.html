@@ -1,44 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Lucky Slots Customer Support</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Support</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
         }
-        .whatsapp-button {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
+
+        .background-image {
+            background-image: url('https://s10.gifyu.com/images/SfQkx.png');
+            background-size: cover; /* Cover the whole screen */
+            background-position: 47% center; /* Center the image */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Place the image behind the content */
+        }
+
+        #supportLink {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Make sure the link is clickable */
+        }
+
+        #supportLink:hover {
             cursor: pointer;
+        }
+
+        @media (orientation: landscape) {
+            .background-image {
+                background-size: contain; /* Ensure full image is visible in landscape */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Customer Support</h1>
-    <p>Click the button to join a random WhatsApp group:</p>
-
-    <button class="whatsapp-button" onclick="joinRandomGroup()">Join WhatsApp Group</button>
+    <div class="background-image"></div>
+    <a id="supportLink" href=""></a>
 
     <script>
-        const groups = [
-            "https://chat.whatsapp.com/GNNYCCGP8vX3xnRLj5919r"
-        ];
+        document.addEventListener('DOMContentLoaded', function() {
+            var whatsappLinks = [
+                
+                  'https://chat.whatsapp.com/C7c6984onBf2NOjZvWprQ6' <!-- jasmine -->
+                
+// ... add as many links as you want
+            ];
 
-        function joinRandomGroup() {
-            const randomIndex = Math.floor(Math.random() * groups.length);
-            const selectedGroup = groups[randomIndex];
-            window.location.href = selectedGroup;
-        }
+            var supportLink = document.getElementById('supportLink');
+
+            supportLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                var randomLink = whatsappLinks[Math.floor(Math.random() * whatsappLinks.length)];
+                window.location.href = randomLink;
+            });
+        });
     </script>
 </body>
 </html>
