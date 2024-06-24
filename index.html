@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Support</h1>
+    <p>Click the button to join a random WhatsApp group:</p>
+
+    <button class="whatsapp-button" onclick="joinRandomGroup()">Join WhatsApp Group</button>
+
+    <script>
+        const groups = [
+            "https://chat.whatsapp.com/GROUP1_LINK",
+            "https://chat.whatsapp.com/GROUP2_LINK",
+            "https://chat.whatsapp.com/GROUP3_LINK",
+            "https://chat.whatsapp.com/GROUP4_LINK"
+        ];
+
+        function joinRandomGroup() {
+            const randomIndex = Math.floor(Math.random() * groups.length);
+            const selectedGroup = groups[randomIndex];
+            window.location.href = selectedGroup;
+        }
+    </script>
+</body>
+</html>
